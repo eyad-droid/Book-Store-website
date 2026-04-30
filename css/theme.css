@@ -1,0 +1,75 @@
+.darkbtn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #a20909;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.darkbtn:hover {
+  transform: scale(1.1);
+  background-color: #9c5555;
+}
+
+.dark-mode {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .book-card {
+  background-color: #2d2d2d !important;
+  color: #fff !important;
+}
+
+.dark-mode,
+.dark-mode nav,
+.dark-mode div,
+.dark-mode section {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+.dark-mode p {
+  color: #ffffff !important;
+}
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #ffffff !important;
+}
+
+.dark-mode img {
+  filter: brightness(0.8);
+  border-radius: 8px;
+}
+
+.dark-mode a {
+  color: #add8e6 !important;
+}
+.dark-mode .hero-content,
+.dark-mode .hero-content div {
+  background-color: transparent !important;
+}
+.dark-mode footer,
+.dark-mode footer p {
+  background-color: #fffefe !important;
+  color: #000000 !important;
+}
+
+.dark-mode .box:hover {
+  background-color: #7a0808 !important;
+}

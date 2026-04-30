@@ -1,30 +1,787 @@
 <!doctype html>
 <html>
   <head>
-    <title>Book Store</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Library</title>
+    <link rel="stylesheet" href="css/theme.css " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        flex-direction: column;
+        min-height: 100vh;
+        display: flex;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 2px;
+        text-align: center;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 0;
+      }
+      nav {
+        background-color: rgb(231, 231, 196);
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 5px;
+        padding: 10px;
+      }
+      .pages {
+        display: inline-block;
+        padding: 3px 5px;
+        text-decoration: none;
+        color: #a20909;
+        font-weight: bold;
+        border: 1px solid #333;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .pages:hover {
+        background-color: #ffffff !important;
+        color: #651ff0;
+      }
+      footer {
+        background-color: #505050;
+        color: #fff;
+        padding: 1px 0px;
+        line-height: 0.3;
+        font-size: small;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: auto;
+      }
+      img {
+        width: 50%;
+        height: 50%;
+      }
+      .hero-container {
+        background-image: url("assets/images/hero7.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-btn {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 20px;
+        background-color: #a20909;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+      .hero-content {
+        font-size: large;
+        font-weight: bold;
+        color: rgb(247, 253, 231);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .features {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px;
+        background-color: #fff;
+      }
+      .box {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ddd;
+        width: 30%;
+        border-radius: 10px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .box:hover {
+        background-color: #333;
+        color: #fff;
+      }
+      .most-pop-books {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 10%;
+        gap: 40px;
+      }
+
+      .content-side {
+        flex: 1;
+      }
+
+      .image-side {
+        text-align: center;
+        flex: 1;
+      }
+      .image-side img {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .book-detail {
+        display: flex;
+        padding: 60px 10%;
+        background-color: #d1cccc;
+        gap: 50px;
+        align-items: flex-start;
+      }
+      .text-side {
+        flex: 1.2;
+        text-align: left;
+      }
+      .label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #403f3f;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+      .content {
+        font-size: 14px;
+        color: #555454;
+        margin-bottom: 25px;
+      }
+      .description p {
+        margin-bottom: 20px;
+      }
+      .image-side {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+      .image-box {
+        background-color: #dbd8d8;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+      }
+      .image-box img {
+        width: 450px;
+        height: auto;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .book-detail:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    </style>
   </head>
 
-  <body>
+  <body id="body">
     <header>
-      <h1>Book Store</h1>
+      <h1>
+        Online Library
+        <!-- <dark mode button>🌙</button> -->
+        <button id="darkModeBtn" class="darkbtn">🌙</button>
+      </h1>
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="pages/gallery.html">Shop</a>
-      <a href="pages/contact.html">Contact</a>
+      <a href="pages/login.html" class="pages">Login</a>
+      <a href="index.html" class="pages">Home</a>
+      <a href="pages/books.html" class="pages">Books</a>
+      <a href="pages/gallery.html" class="pages">Gallery </a>
+      <a href="pages/gen-info.html" class="pages">General Information</a>
+      <a href="pages/writers.html" class="pages">Popular Writers</a>
+      <a href="pages/cart.html" class="pages">view cartoons</a>
+      <a href="pages/contact.html" class="pages">Contact as</a>
     </nav>
 
     <main>
-      <h2>Welcome</h2>
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Your Personal Library, Anywhere.</h1>
+          <p>Your Next Adventure Starts Here.</p>
+          <a href="pages/books.html" class="hero-btn">For More Books</a>
+        </div>
+      </div>
+      <section class="features">
+        <div class="box">
+          <h3>Unlimited Access</h3>
+          <p>Read thousands of books anytime, anywhere.</p>
+        </div>
+        <div class="box">
+          <h3>Smart Bookmarking</h3>
+          <p>Pick up exactly where you left off on any device.</p>
+        </div>
+
+        <div class="box">
+          <h3>Diverse Genres</h3>
+          <p>From academic research to world-class fiction.</p>
+        </div>
+      </section>
+
+      <section class="most-pop-books">
+        <div class="content-side">
+          <br />
+          <hr />
+          <h1>Reading for your mind</h1>
+
+          <br />
+
+          <p style="font-size: medium">
+            Spanning over thousands of years, it’s been books that have broken
+            boundaries and challenged perceptions. Some have inspired creative
+            revolutions, others have been a vital way of sharing age-old
+            information, knowledge and wisdom. Some books offer an escape into a
+            dystopian or fantasy world where wizards and witches wield magic to
+            survive against savage sorcery.
+          </p>
+          <p>
+            Reading is not only good for gaining knowledge and furthering
+            education, studies have also shown that it’s beneficial for our
+            health and wellbeing, fitting into society, and developing
+            employment skills.
+          </p>
+          <p>
+            They also say that reading for your mind is like exercise for your
+            body, so if you haven’t gotten a mental work-out lately, grab a pen
+            and paper and get ready to make a list of these classic novels that
+            will expand your literary palate and/or teach you a thing or two.
+          </p>
+          <div class="image-side">
+            <img
+              src="assets/images/book1.webp"
+              style="width: 70%; height: 700%"
+            />
+          </div>
+
+          <br />
+          <br />
+        </div>
+      </section>
+      <hr />
+      <h2 style="text-align: center">Most Popular Books:</h2>
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">
+            1. On the Origin of Species by Charles Darwin
+          </h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">Scientific Literature.</p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">
+            You are interested in how animals adapt to their environment to
+            survive.
+          </p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            It took over 20 years for Darwin to research, develop and finally
+            publish his book.
+          </p>
+
+          <div class="description">
+            <p>
+              There’s been a handful of controversial books that have shaken up
+              the very ground in which we build our beliefs on…. and Charles
+              Darwin’s famous ‘On the origin of species’ has been like no other.
+            </p>
+            <p>
+              It all started on December 27, 1831, when the young naturalist
+              left Plymouth Harbor aboard the HMS Beagle to spend the next (what
+              turned out to be five long) years gallivanting around the globe
+              conducting research on plants, animals and the environment in
+              which they preside.
+            </p>
+            <p>
+              His adventure turned into one of the greatest discoveries in the
+              history of mankind - the theory of evolution. What Darwin found
+              along his travels, and what he would eventually declare to the
+              scientific community and broader world, was that existing
+              organisms better suited for adaptation to their environment
+              survive, while those that are poorly suited to their environment
+              do not.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/book3.webp" />
+          </div>
+        </div>
+      </section>
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">
+            2. The Great Gatsby BY F SCOTT FITZGERALD
+          </h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">
+            Novel (however recent times would place it in the ‘historical
+            fiction’ category).
+          </p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">
+            ou are interested in the 1920’s Jazz Era in the United States
+          </p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            The book sold no more than 25,000 copies in Fitzgerald's lifetime,
+            and then 25 million copies from then on.
+          </p>
+
+          <div class="description">
+            <p>
+              he Great Gatsby was written in 1925 by an American writer F. Scott
+              Fitzgerald and set in the Jazz Age on Long Island. The novel
+              depicts narrator Nick Carraway's interactions with mysteriously
+              wealthy Jay Gatsby, his obsession to reunite with his former
+              lover, Daisy Buchanan and his love of lavish parties at a time
+              when The New York Times noted "gin was the national drink and sex
+              the national obsession".
+            </p>
+            <p>
+              Generations of readers have imagined, speculated, debated and
+              thoroughly enjoyed the story and has become a true classic of
+              twentieth-century literature.
+            </p>
+            <p>
+              This was Fitzgerald's third book, as well as the highest
+              achievement of his career, however It wasn’t until F Scott
+              Fitzgerald passed away that his work really began to gain
+              interest. Eventually his book became a core part of most high
+              school curricula in western cultures, especially American, with
+              the strong focus of American popular culture. Numerous stage and
+              film adaptations followed in the subsequent decades.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/book2.webp" />
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">
+            3. The Catcher In The Rye BY J.D. SALINGER
+          </h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">Novel.</p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">
+            You’re interested in teenage angst, emotions and development.
+          </p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            After publishing The Catcher in the Rye, Salinger became a recluse.
+          </p>
+
+          <div class="description">
+            <p>
+              The Catcher in the Rye, was written by J.D. Salinger and published
+              in 1951. The novel is set around the 1950s and is narrated by a
+              young man named Holden Caulfield, who while telling the story,
+              makes it clear that he is undergoing treatment in a mental
+              hospital or sanatorium. The novel details two days in the life of
+              the 16-year-old after he’s been expelled from school and touches
+              on the emotions, instability and confusion that he’s experiencing
+              with the ‘’phoniness’’ of the adult world.
+            </p>
+
+            <p>
+              This novel has become a fundamental part of western curriculum as
+              its themes of angst, alienation, and critique on superficiality in
+              society is an important read for adolescents perhaps experiencing
+              similar emotions. The novel also deals with complex issues of
+              innocence, identity, belonging, loss, connection, sex, and
+              depression.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/book4.webp" />
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">4. 1984 BY GEORGE ORWELL</h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">Dystopian social science fiction.</p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">
+            You love reading about dystopian worlds, possible futures and if
+            you’re a fan of the series Black Mirror.
+          </p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            Orwell modeled the character of Julia on his second wife, Sonia
+            Brownell.
+          </p>
+
+          <div class="description">
+            <p>
+              1984 is a dystopian social science fiction novel and is written by
+              English novelist George Orwell. The story takes place in an
+              imagined future (the year 1984) when much of the world has fallen
+              victim to totalitarianism, mass surveillance, manipulation of the
+              past and propaganda.
+            </p>
+            <p>
+              The superstate is called Oceania and is ruled by the Party who
+              employ Thought Police, whose job it is to persecute individuality
+              and independent thinking. Winston Smith is the protagonist of the
+              novel and although he is a responsible and reliable worker in the
+              system, he dreams of rebellion. When his colleague, Julia, and him
+              begin a forbidden relationship, he begins to remember what life
+              was like before the Party came to power.
+            </p>
+            <p>
+              The novel examines the role of truth and facts within politics and
+              the ways in which they are manipulated. Many of the terms and
+              concepts found throughout the book - such as Big Brother,
+              doublethink, thoughtcrime, Newspeak, and Memory hole, have become
+              contemporary vernacular.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/book5.webp" />
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">
+            5. Lord Of The Rings Trilogy BY J.R.R. TOLKIEN
+          </h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">Epic high fantasy novel.</p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">
+            You love fantasy worlds and have a passion for heavy writing, deep
+            explanations.
+          </p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            Tolkien is said to have typed all 1,200 pages of The Lord of the
+            Rings with two fingers.
+          </p>
+
+          <div class="description">
+            <p>
+              The Lord of the Rings is an high fantasy novel, written between
+              1937-1949 by the English author and scholar J. R. R. Tolkien.
+            </p>
+            <p>
+              All three parts of the masterpiece are steeped in magic and
+              otherworldliness. The epic story centres around Frodo Baggins, who
+              is forced to leave his hometown of the Shire to make a perilous
+              journey across the realms of Middle-earth to destroy a powerful
+              ring, deep inside the territories of the Dark Lord. Sauron, the
+              dark lord, has gathered all the Rings of Power, minus the one ring
+              - the ring that rules them all - and needs this for his campaign
+              to conquer and rule all of middle-earth. There Frodo must destroy
+              the ring forever and foil the dark lord in his evil purpose.
+            </p>
+            <p>
+              The books have been turned into incredibly successful movies that
+              tally up to nearly 12 hours of entertaining pleasure.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/book6.webp" />
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">6. The Bible unknown</h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">Religious Text.</p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">You enjoy philosophy and symbolism texts.</p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            Over 100 million copies of the Bible are sold each year..
+          </p>
+
+          <div class="description">
+            <p>
+              Yes, The Bible is a book and is one of the most successful of all
+              time and also one of the go-to’s on deep morality. The Bible is a
+              collection of religious texts or scriptures that have become
+              sacred to Christians, Jews, Samaritans, Rastafari and other
+              religious groups.
+            </p>
+
+            <p>
+              The influence the Bible has had on Western culture is
+              immeasurable. For thousands of years this book has inspired the
+              greatest writers, artists, musicians, religious leaders, painters
+              of our time. Love it or hate it, the bible has been one of the
+              most pivotal books of all time in the western world.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/Books7.webp" />
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">7. War And Peace BY LEO TOLSTOY</h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">
+            "Not a novel, even less is it a poem, and still less a historical
+            chronicle."
+          </p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">
+            You love a book full of it all - love, war, peace, tragedy, spirit,
+            friendship.
+          </p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            The 4-part film adaptation, filmed in 1965 in the Soviet Union, was
+            7 hours 11 minutes long. It was the most expensive Soviet film ever
+            made.
+          </p>
+
+          <div class="description">
+            <p>
+              War and Peace is a novel by the Russian author Leo Tolstoy and
+              published in its entirety in 1869. Often called the greatest novel
+              ever written, and regarded as one of Tolstoy's finest literary
+              achievements, this historical war epic is a celebration of Russian
+              spirit.
+            </p>
+            <p>
+              The novel chronicles the French invasion of Russia, or the
+              Napoleonic wars, and follows the transformation of five
+              aristocratic families against the backdrop of living through
+              tragedy and war.
+            </p>
+
+            <p>
+              Tolstoy's memorable and well described characters seek
+              fulfillment, fall in love, make mistakes, and become scarred by
+              war in different ways. Offering a profound look into a human's
+              experience during a hugely impactful historical event.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/Book8.webp" />
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">
+            8. Harry Potter Series BY J.K. ROWLING
+          </h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">Fantasy Fiction.</p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">
+            You are ready for a deep dive into a mysterious new world.
+          </p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            J.K. Rowling invented the names of the Hogwarts houses (the school
+            in the book) on the back of a barf bag.
+          </p>
+
+          <div class="description">
+            <p>
+              Harry Potter is a series by British author, J. K. Rowling, and is
+              made up of seven different novels. With the first book being
+              published in 1997, the lives of little people around the world
+              were changed forever. The Harry Potter world had well and truly
+              began.
+            </p>
+            <p>
+              The series tells the story of a young wizard, Harry Potter who
+              struggles against Lord Voldemort, a dark wizard who intends to
+              become immortal.
+            </p>
+            <p>
+              The books have found immense popularity, positive reviews, and
+              commercial success worldwide. They have attracted a wide adult
+              audience as well as younger readers and are often considered
+              cornerstones of modern young adult literature.
+            </p>
+
+            <p>
+              As of February 2018, the books have sold more than 500 million
+              copies worldwide, making them the best-selling book series in
+              history, and have been translated into eighty languages. The last
+              four books consecutively set records as the fastest-selling books
+              in history, with the final instalment selling roughly eleven
+              million copies in the United States within twenty-four hours of
+              its release.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/Book9.webp" />
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">
+            9. Great Expectations BY CHARLES DICKENS
+          </h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">Novel.</p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">If you love mystery, suspense and plot twists.</p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            Great expectations is one of two dickens novels written in the first
+            person.
+          </p>
+
+          <div class="description">
+            <p>
+              Great Expectations is the thirteenth novel by Charles Dickens and
+              was first published as a series of stories in Dickens's weekly
+              periodical from 1 December 1860 to August 1861.
+            </p>
+            <p>
+              The story follows Pip who leads a simple life until a bitter
+              gentlewoman employs him as a sometime companion to herself and her
+              adopted daughter. The novel is set in Kent and London in the
+              1900’s and is full of themes include wealth and poverty, love and
+              rejection, and the eventual triumph of good over evil.
+            </p>
+
+            <p>
+              Great Expectations, has been translated into many languages and
+              adapted into a film and various other forms of media. Upon its
+              release, the novel received near universal acclaim.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/Book10.webp" />
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <section class="book-detail">
+        <div class="text-side">
+          <h2 style="text-align: center">10. Hamlet BY WILLIAM SHAKESPEARE</h2>
+          <h3 class="label">GENRE</h3>
+          <p class="content">Shakespearean Tragedy Play.</p>
+
+          <h3 class="label">READ IF</h3>
+          <p class="content">You are hellbent on reading the classics.</p>
+
+          <h3 class="label">FUN FACT</h3>
+          <p class="content">
+            Exact dating of the play is impossible, but most agree Shakespeare
+            finished it in 1601.
+          </p>
+
+          <div class="description">
+            <p>
+              Hamlet is a tragedy by William Shakespeare, believed to have been
+              written between 1599 and 1601. It is Shakespeare's longest play,
+              with 29,551 words.
+            </p>
+            <p>
+              The play is set in Denmark and depicts Prince Hamlet, his revenge
+              against his uncle, Claudius, who has murdered Hamlet's father in
+              order to seize his throne and marry Hamlet's mother. The play
+              vividly charts the course of real and feigned madness.
+            </p>
+
+            <p>
+              Hamlet is considered one of the most profound and influential
+              works of world literature, and was one of Shakespeare's most
+              popular works during his lifetime.
+            </p>
+          </div>
+        </div>
+        <div class="image-side">
+          <div class="image-box">
+            <img src="assets/images/Books11.webp" />
+          </div>
+        </div>
+      </section>
+      <hr />
+      <div class="hero-content">
+        <a href="pages/contact.html" class="hero-btn">For contact as</a>
+      </div>
+      <br />
     </main>
 
     <footer>
-      <p>© 2026 Book Store</p>
+      <p style="text-align: center">© 2026 Book Store | IT final project</p>
+      <p style="text-align: left">
+        created by : Eyad , Marwan , Yassen , Abdulrahman , Nour , Marwan ,
+        Ahmed , Mahmoud .
+      </p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
   </body>
 </html>
